@@ -1,4 +1,5 @@
 **I. Thành phần cốt lõi của một Workflow**
+
 **1. Tác nhân và Phân làn (Actors / Pools & Swimlanes)**: Xác định rõ "Ai làm bước này?". Trong sơ đồ, chúng được chia thành các bể (Pool) và các làn bơi (Lane) riêng biệt cho từng đối tượng: Khách hàng (User), Quản trị viên (Admin), Hệ thống nội bộ (System/Backend), hoặc Hệ thống bên thứ ba (Cổng thanh toán, Đơn vị vận chuyển).
 **2. Sự kiện (Events / Triggers):**
   - Điểm bắt đầu (Start Event): Sự kiện kích hoạt luồng chạy (ví dụ: Khách hàng nhấn nút "Thanh toán", hoặc Hệ thống đến 00:00 tự động quét đối soát).
@@ -17,6 +18,7 @@
 Trong hình trên, toàn bộ quy trình nằm trong Pool One và được chia thành 3 làn (Lane One, Lane Two, Lane Three) tương ứng với 3 vai trò khác nhau. Luồng bắt đầu từ vòng tròn Start Event, đi qua tác vụ Activity A rồi gặp hình thoi Gateway One để xét điều kiện: nếu thỏa mãn Condition One thì đi thẳng sang Activity B và Activity C tới End Event One; nếu rơi vào Condition Two thì luồng chuyển xuống làn thứ hai (Lane Two) để chạy Activity D. Tại Gateway Two (có dấu + biểu thị chạy song song), luồng tách làm hai nhánh chạy đồng thời xuống Activity E ở làn 2 và Activity F ở làn 3 trước khi kết thúc tại End Event Two và End Event Three.
 
 **II. Cách vẽ một Workflow (Quy trình 5 bước)**
+
 **1. Chốt biên quy trình (Xác định Start & End):** Đặt câu hỏi "Quy trình này bắt đầu từ khoảnh khắc nào và khi nào thì coi là xong?". Nếu không khóa chặt điểm đầu và điểm cuối, bạn sẽ vẽ lan man từ luồng "Đặt hàng" sang tận luồng "Kế toán hoàn thuế".
 **2. Xác định Actors để kẻ Swimlane:** Liệt kê tất cả các bên tham gia (Người dùng, Hệ thống, Admin, Bên thứ 3) và kẻ sẵn các làn. Hành động của ai thì đặt đúng vào làn của người đó.
 **3. Vẽ "Happy Path" trước (Luồng màu hồng):** Giả định mọi thứ diễn ra thuận lợi 100% (khách có đủ tiền, kho còn hàng, mạng không rớt) để nối một mạch từ Start Event đến End Event. Bước này giúp bạn dựng được bộ khung chính cực nhanh.
