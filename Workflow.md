@@ -6,14 +6,14 @@
   - Điểm bắt đầu (Start Event): Sự kiện kích hoạt luồng chạy (ví dụ: Khách hàng nhấn nút "Thanh toán", hoặc Hệ thống đến 00:00 tự động quét đối soát).
   - Sự kiện trung gian (Intermediate Event): Các điểm chờ hoặc nhận tín hiệu (ví dụ: Chờ khách nhập OTP trong 60 giây).
   - Điểm kết thúc (End Event): Trạng thái khép lại quy trình (Đặt hàng thành công, hoặc Hủy đơn).
-  - 
+    
 **3. Hoạt động / Tác vụ (Activities / Tasks):** Các bước xử lý cụ thể. Nguyên tắc vàng của BA khi đặt tên Task là dùng cụm Động từ + Danh từ rõ nghĩa (ví dụ: "Kiểm tra tồn kho", "Khấu trừ hạn mức", tuyệt đối tránh viết chung chung kiểu "Xử lý đơn").
     
 **4. Điểm rẽ nhánh / Điều kiện (Gateways / Decisions):** Thường biểu diễn bằng hình thoi để kiểm tra logic và điều hướng luồng đi:
   - Rẽ nhánh loại trừ (Exclusive / XOR): Chỉ đi theo 1 nhánh duy nhất dựa trên điều kiện Đúng/Sai (ví dụ: Tồn kho đủ → Tạo đơn; Tồn kho thiếu → Báo lỗi).
   - Rẽ nhánh song song (Parallel / AND - ký hiệu dấu +): Tách luồng để thực hiện nhiều việc cùng lúc mà không cần chờ nhau (ví dụ: Vừa Gửi email xác nhận, vừa Bắn thông báo cho kho đóng gói).
   - Rẽ nhánh bao hàm (Inclusive / OR): Có thể đi vào 1 hoặc nhiều nhánh cùng lúc tùy điều kiện thỏa mãn.
-  - 
+    
 **5. Luồng kết nối (Sequence Flows & Message Flows):** Các đường mũi tên chỉ thứ tự thực hiện từ bước này sang bước khác, hoặc luồng truyền dữ liệu/thông báo giữa các hệ thống khác nhau.
     
 **6. Quy tắc nghiệp vụ & Dữ liệu đi kèm (Business Rules & Artifacts):** Các điều kiện ràng buộc hoặc tài liệu/dữ liệu sinh ra tại bước đó (ví dụ: Hóa đơn VAT, Bản ghi lịch sử giao dịch).
